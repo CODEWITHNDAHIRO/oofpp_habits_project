@@ -14,11 +14,12 @@ class Periodicity(str, Enum):
 @dataclass
 class Habit:
     name: str
-    description: str
+ description: str
     periodicity: Periodicity
-    starting_at: datetime = field(default_factory=datetime.now)
+    created_at: datetime = field(default_factory=datetime.now)
     completions: List[datetime] = field(default_factory=list)
     habit_id: Optional[int] = field(default=None, compare=False)
+
 
     def check_off(self, at=None):
         ts = at or datetime.now()
