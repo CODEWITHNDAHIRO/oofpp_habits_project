@@ -14,7 +14,7 @@ class Periodicity(str, Enum):
 @dataclass
 class Habit:
     name: str
- description: str
+    description: str
     periodicity: Periodicity
     created_at: datetime = field(default_factory=datetime.now)
     completions: List[datetime] = field(default_factory=list)
